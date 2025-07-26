@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小游戏乐园</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .game-section {margin: 2.5rem auto; max-width: 420px; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 2rem 1.2rem;}
+        .game-title {font-size: 1.3rem; font-weight: 700; color: #3730a3; margin-bottom: 1.2rem; text-align: center;}
+        .game-area {display: flex; justify-content: center; align-items: center;}
+        .game-desc {color: #64748b; font-size: 0.98rem; text-align: center; margin-bottom: 1.2rem;}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-link">🔢 Simple RNG</a>
+        <a href="randnum.html" class="nav-link">🎲 Advanced RNG</a>
+        <a href="password.html" class="nav-link">🔒 Password Generator</a>
+        <a href="menu.html" class="nav-link">🗺️ Site Map</a>
+        <a href="games.html" class="nav-link">🎮 Mini Games</a>
+    </nav>
+    <div class="container">
+        <h1 style="text-align:center;">🎮 HTML Mini Games</h1>
+        <div class="game-section">
+            <div class="game-title">Tic Tac Toe</div>
+            <div class="game-desc">Play with a friend or against yourself. Three in a row wins!</div>
+            <div class="game-area"><div id="tictactoe"></div></div>
+        </div>
+        <div class="game-section">
+            <div class="game-title">Snake</div>
+            <div class="game-desc">Use arrow keys to control the snake. Eat food to grow, avoid walls!</div>
+            <div class="game-area"><canvas id="snake" width="300" height="300" style="background:#f1f5f9;border-radius:8px;"></canvas></div>
+        </div>
+        <div class="game-section">
+            <div class="game-title">2048</div>
+            <div class="game-desc">Merge numbers to reach 2048 and beyond!</div>
+            <div class="game-area"><div id="game2048"></div></div>
+        </div>
+        <div class="share-section">
+            <span>Share to:</span>
+            <a class="share-btn" href="#" onclick="shareTo('twitter')">Twitter</a>
+            <a class="share-btn" href="#" onclick="shareTo('facebook')">Facebook</a>
+            <a class="share-btn" href="#" onclick="shareTo('reddit')">Reddit</a>
+            <a class="share-btn" href="#" onclick="shareTo('linkedin')">LinkedIn</a>
+        </div>
+        <div class="footer-links">
+            <a href="https://www.seodog.cn" target="_blank" rel="noopener">🔗 AI Tools Directory</a>
+            <a href="https://www.AIAIY.com" target="_blank" rel="noopener">🔗 AI Tools Navigation</a>
+        </div>
+    </div>
+    <script src="games.js"></script>
+    <script src="share.js"></script>
+</body>
+</html> 

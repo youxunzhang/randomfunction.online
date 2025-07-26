@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-link">🔢 Simple RNG</a>
+        <a href="randnum.html" class="nav-link">🎲 Advanced RNG</a>
+        <a href="password.html" class="nav-link">🔒 Password Generator</a>
+        <a href="menu.html" class="nav-link">🗺️ Site Map</a>
+        <a href="games.html" class="nav-link">🎮 Mini Games</a>
+    </nav>
+    <div class="container">
+        <h1>Advanced Random Number Generator</h1>
+        <p class="subtitle">Set how many random numbers you want, the min and max value, and get your result instantly!</p>
+        <div class="form-group">
+            <label for="count">How many numbers?</label>
+            <input type="number" id="count" min="1" max="1000" value="10">
+        </div>
+        <div class="form-group">
+            <label for="min">Minimum value:</label>
+            <input type="number" id="min" value="1">
+        </div>
+        <div class="form-group">
+            <label for="max">Maximum value:</label>
+            <input type="number" id="max" value="100">
+        </div>
+        <div class="form-group">
+            <label><input type="checkbox" id="unique" checked> Unique (no repeats)</label>
+        </div>
+        <button id="generate">Generate</button>
+        <button id="copy" style="margin-left:1rem;">Copy Result</button>
+        <div id="result" class="result" style="min-height:3rem;"></div>
+        <div class="subtitle" style="margin-top:2rem;font-size:0.95rem;color:#6b7280;">
+            <b>Note:</b> This random number generator can generate unique or repeatable natural numbers online, suitable for statistics, cryptography, and more.
+        </div>
+        <div class="share-section">
+            <span>Share to:</span>
+            <a class="share-btn" href="#" onclick="shareTo('twitter')">Twitter</a>
+            <a class="share-btn" href="#" onclick="shareTo('facebook')">Facebook</a>
+            <a class="share-btn" href="#" onclick="shareTo('reddit')">Reddit</a>
+            <a class="share-btn" href="#" onclick="shareTo('linkedin')">LinkedIn</a>
+        </div>
+        <div class="footer-links">
+            <a href="https://www.seodog.cn" target="_blank" rel="noopener">🔗 AI Tools Directory</a>
+        </div>
+    </div>
+    <script src="randnum.js"></script>
+    <script src="share.js"></script>
+</body>
+</html> 

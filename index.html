@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8794607118520437"
+     crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-8794607118520437">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-link">🔢 Simple RNG</a>
+        <a href="randnum.html" class="nav-link">🎲 Advanced RNG</a>
+        <a href="password.html" class="nav-link">🔒 Password Generator</a>
+        <a href="menu.html" class="nav-link">🗺️ Site Map</a>
+        <a href="games.html" class="nav-link">🎮 Mini Games</a>
+    </nav>
+    <div class="container">
+        <h1>Random Password Generator</h1>
+        <p class="subtitle">Generate a set of random numbers for your password needs</p>
+        <div class="form-group">
+            <label for="count">How many numbers?</label>
+            <input type="number" id="count" min="1" max="20" value="6">
+        </div>
+        <div class="form-group">
+            <label for="length">Digits per number:</label>
+            <input type="number" id="length" min="1" max="12" value="6">
+        </div>
+        <button id="generate">Generate</button>
+        <div id="result" class="result"></div>
+        <div class="share-section">
+            <span>Share to:</span>
+            <a class="share-btn" href="#" onclick="shareTo('twitter')">Twitter</a>
+            <a class="share-btn" href="#" onclick="shareTo('facebook')">Facebook</a>
+            <a class="share-btn" href="#" onclick="shareTo('reddit')">Reddit</a>
+            <a class="share-btn" href="#" onclick="shareTo('linkedin')">LinkedIn</a>
+        </div>
+        <div class="footer-links">
+            <a href="https://www.seodog.cn" target="_blank" rel="noopener">🔗 AI Tools Directory</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="share.js"></script>
+</body>
+</html> 
