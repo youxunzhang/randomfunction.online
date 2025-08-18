@@ -3,13 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>小游戏乐园</title>
+    <title>Mini Games Collection - RandomFunction.Online</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .game-section {margin: 2.5rem auto; max-width: 420px; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 2rem 1.2rem;}
-        .game-title {font-size: 1.3rem; font-weight: 700; color: #3730a3; margin-bottom: 1.2rem; text-align: center;}
-        .game-area {display: flex; justify-content: center; align-items: center;}
-        .game-desc {color: #64748b; font-size: 0.98rem; text-align: center; margin-bottom: 1.2rem;}
+        .games-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .game-section {
+            margin: 2rem auto;
+            max-width: 500px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 2rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .game-section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+        
+        .game-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #3730a3;
+            margin-bottom: 0.8rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .game-desc {
+            color: #64748b;
+            font-size: 1rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+        
+        .game-area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .game-controls {
+            text-align: center;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+        
+        .control-btn {
+            background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 0 0.3rem;
+            transition: all 0.2s;
+        }
+        
+        .control-btn:hover {
+            background: linear-gradient(90deg, #4f46e5 0%, #2563eb 100%);
+            transform: translateY(-1px);
+        }
+        
+        .score-display {
+            background: #f1f5f9;
+            padding: 0.8rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            text-align: center;
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .game-grid {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        .difficulty-selector {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .difficulty-btn {
+            padding: 0.4rem 0.8rem;
+            border: 2px solid #e5e7eb;
+            background: #fff;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .difficulty-btn.active {
+            border-color: #6366f1;
+            background: #6366f1;
+            color: #fff;
+        }
+        
+        .game-instructions {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: #92400e;
+        }
+        
+        .game-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
     </style>
 </head>
 <body>
@@ -20,35 +145,135 @@
         <a href="menu.html" class="nav-link">🗺️ Site Map</a>
         <a href="games.html" class="nav-link">🎮 Mini Games</a>
     </nav>
-    <div class="container">
-        <h1 style="text-align:center;">🎮 HTML Mini Games</h1>
-        <div class="game-section">
-            <div class="game-title">Tic Tac Toe</div>
-            <div class="game-desc">Play with a friend or against yourself. Three in a row wins!</div>
-            <div class="game-area"><div id="tictactoe"></div></div>
-        </div>
-        <div class="game-section">
-            <div class="game-title">Snake</div>
-            <div class="game-desc">Use arrow keys to control the snake. Eat food to grow, avoid walls!</div>
-            <div class="game-area"><canvas id="snake" width="300" height="300" style="background:#f1f5f9;border-radius:8px;"></canvas></div>
-        </div>
-        <div class="game-section">
-            <div class="game-title">2048</div>
-            <div class="game-desc">Merge numbers to reach 2048 and beyond!</div>
-            <div class="game-area"><div id="game2048"></div></div>
-        </div>
-        <div class="share-section">
-            <span>Share to:</span>
-            <a class="share-btn" href="#" onclick="shareTo('twitter')">Twitter</a>
-            <a class="share-btn" href="#" onclick="shareTo('facebook')">Facebook</a>
-            <a class="share-btn" href="#" onclick="shareTo('reddit')">Reddit</a>
-            <a class="share-btn" href="#" onclick="shareTo('linkedin')">LinkedIn</a>
-        </div>
-        <div class="footer-links">
-            <a href="https://www.seodog.cn" target="_blank" rel="noopener">🔗 AI Tools Directory</a>
-            <a href="https://www.AIAIY.com" target="_blank" rel="noopener">🔗 AI Tools Navigation</a>
+    
+    <div class="games-container">
+        <div class="container">
+            <h1>🎮 Mini Games Collection</h1>
+            <p class="subtitle">Enjoy these fun browser games! All games work offline and are completely free.</p>
+            
+            <div class="game-grid">
+                <!-- Tic Tac Toe -->
+                <div class="game-section">
+                    <div class="game-title">⭕ Tic Tac Toe</div>
+                    <div class="game-desc">Classic 3x3 grid game. Get three in a row to win!</div>
+                    <div class="game-area">
+                        <div id="tictactoe"></div>
+                    </div>
+                    <div class="game-controls">
+                        <button class="control-btn" id="ttt-restart">🔄 New Game</button>
+                        <button class="control-btn" id="ttt-ai">🤖 vs AI</button>
+                    </div>
+                    <div class="score-display" id="ttt-score">Player X's turn</div>
+                </div>
+
+                <!-- Snake Game -->
+                <div class="game-section">
+                    <div class="game-title">🐍 Snake Game</div>
+                    <div class="game-desc">Control the snake with arrow keys. Eat food to grow longer!</div>
+                    <div class="game-area">
+                        <canvas id="snake" width="300" height="300" style="background:#f1f5f9;border-radius:8px;border:2px solid #e5e7eb;"></canvas>
+                    </div>
+                    <div class="game-controls">
+                        <button class="control-btn" id="snake-restart">🔄 Restart</button>
+                        <button class="control-btn" id="snake-pause">⏸️ Pause</button>
+                    </div>
+                    <div class="score-display" id="snake-score">Score: 0 | Length: 1</div>
+                    <div class="game-instructions">
+                        <strong>Controls:</strong> Arrow keys to move, R to restart, Space to pause
+                    </div>
+                </div>
+
+                <!-- 2048 Game -->
+                <div class="game-section">
+                    <div class="game-title">🔢 2048</div>
+                    <div class="game-desc">Merge tiles to reach 2048! Use arrow keys to move tiles.</div>
+                    <div class="game-area">
+                        <div id="game2048"></div>
+                    </div>
+                    <div class="game-controls">
+                        <button class="control-btn" id="g2048-restart">🔄 New Game</button>
+                        <button class="control-btn" id="g2048-undo">↩️ Undo</button>
+                    </div>
+                    <div class="score-display" id="g2048-score">Score: 0 | Best: 0</div>
+                </div>
+
+                <!-- Memory Game -->
+                <div class="game-section">
+                    <div class="game-title">🧠 Memory Match</div>
+                    <div class="game-desc">Find matching pairs of cards. Test your memory!</div>
+                    <div class="difficulty-selector">
+                        <button class="difficulty-btn active" data-size="4">Easy (4x4)</button>
+                        <button class="difficulty-btn" data-size="6">Medium (6x6)</button>
+                        <button class="difficulty-btn" data-size="8">Hard (8x8)</button>
+                    </div>
+                    <div class="game-area">
+                        <div id="memory-game"></div>
+                    </div>
+                    <div class="game-controls">
+                        <button class="control-btn" id="memory-restart">🔄 New Game</button>
+                        <button class="control-btn" id="memory-shuffle">🔀 Shuffle</button>
+                    </div>
+                    <div class="game-stats">
+                        <span id="memory-moves">Moves: 0</span>
+                        <span id="memory-time">Time: 0s</span>
+                        <span id="memory-pairs">Pairs: 0/8</span>
+                    </div>
+                </div>
+
+                <!-- Color Match -->
+                <div class="game-section">
+                    <div class="game-title">🎨 Color Match</div>
+                    <div class="game-desc">Click the color that matches the target color name!</div>
+                    <div class="game-area">
+                        <div id="color-game"></div>
+                    </div>
+                    <div class="game-controls">
+                        <button class="control-btn" id="color-restart">🔄 New Round</button>
+                        <button class="control-btn" id="color-timer">⏱️ Timer Mode</button>
+                    </div>
+                    <div class="score-display" id="color-score">Score: 0 | Streak: 0</div>
+                </div>
+
+                <!-- Number Puzzle -->
+                <div class="game-section">
+                    <div class="game-title">🧩 Number Puzzle</div>
+                    <div class="game-desc">Arrange numbers in order by sliding tiles. Click to move!</div>
+                    <div class="difficulty-selector">
+                        <button class="difficulty-btn active" data-size="3">3x3</button>
+                        <button class="difficulty-btn" data-size="4">4x4</button>
+                        <button class="difficulty-btn" data-size="5">5x5</button>
+                    </div>
+                    <div class="game-area">
+                        <div id="puzzle-game"></div>
+                    </div>
+                    <div class="game-controls">
+                        <button class="control-btn" id="puzzle-restart">🔄 New Game</button>
+                        <button class="control-btn" id="puzzle-solve">💡 Solve</button>
+                    </div>
+                    <div class="game-stats">
+                        <span id="puzzle-moves">Moves: 0</span>
+                        <span id="puzzle-time">Time: 0s</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="share-section">
+                <span>Share these games:</span>
+                <a class="share-btn" href="#" onclick="shareTo('twitter')">Twitter</a>
+                <a class="share-btn" href="#" onclick="shareTo('facebook')">Facebook</a>
+                <a class="share-btn" href="#" onclick="shareTo('reddit')">Reddit</a>
+                <a class="share-btn" href="#" onclick="shareTo('linkedin')">LinkedIn</a>
+                <a class="share-btn" href="#" onclick="shareTo('whatsapp')">WhatsApp</a>
+                <a class="share-btn" href="#" onclick="shareTo('telegram')">Telegram</a>
+            </div>
+            
+            <div class="footer-links">
+                <a href="https://www.seodog.cn" target="_blank" rel="noopener">🔗 AI Tools Directory</a>
+                <a href="https://www.AIAIY.com" target="_blank" rel="noopener">🔗 AI Tools Navigation</a>
+            </div>
         </div>
     </div>
+    
     <script src="games.js"></script>
     <script src="share.js"></script>
 </body>
