@@ -2,71 +2,246 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CXH17REJKN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CXH17REJKN');
-</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8794607118520437"
-     crossorigin="anonymous"></script>
-<meta name="google-adsense-account" content="ca-pub-8794607118520437">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Password Generator</title>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GSXS98F93E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-GSXS98F93E');
-</script>
+    
+    <!-- Primary Meta Tags -->
+    <title>Free Random Number Generator Online | Random Password Generator | RandomFunction.Online</title>
+    <meta name="title" content="Free Random Number Generator Online | Random Password Generator | RandomFunction.Online">
+    <meta name="description" content="Free online random number generator, password generator, and random tools. Generate random numbers, passwords, and play mini games. No registration required, completely free!">
+    <meta name="keywords" content="random number generator, random password generator, online randomizer, free random tool, random picker, random selector, random generator online, random number algorithm, javascript random, python random">
+    <meta name="author" content="RandomFunction.Online">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://randomfunction.online/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://randomfunction.online/">
+    <meta property="og:title" content="Free Random Number Generator Online | RandomFunction.Online">
+    <meta property="og:description" content="Generate random numbers, passwords, and play mini games online. Free random number generator with advanced features.">
+    <meta property="og:image" content="https://randomfunction.online/og-image.jpg">
+    <meta property="og:site_name" content="RandomFunction.Online">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://randomfunction.online/">
+    <meta property="twitter:title" content="Free Random Number Generator Online | RandomFunction.Online">
+    <meta property="twitter:description" content="Generate random numbers, passwords, and play mini games online. Free random number generator with advanced features.">
+    <meta property="twitter:image" content="https://randomfunction.online/twitter-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSXS98F93E"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-GSXS98F93E');
+    </script>
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8794607118520437" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-8794607118520437">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Random Number Generator",
+        "description": "Free online random number generator and password generator with advanced features",
+        "url": "https://randomfunction.online",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "RandomFunction.Online"
+        },
+        "featureList": [
+            "Random Number Generation",
+            "Password Generation",
+            "Mini Games",
+            "Advanced RNG",
+            "Free Online Tools"
+        ]
+    }
+    </script>
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://randomfunction.online"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Random Number Generator",
+                "item": "https://randomfunction.online/"
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.html" class="nav-link">🔢 Simple RNG</a>
-        <a href="randnum.html" class="nav-link">🎲 Advanced RNG</a>
-        <a href="password.html" class="nav-link">🔒 Password Generator</a>
-        <a href="menu.html" class="nav-link">🗺️ Site Map</a>
-        <a href="games.html" class="nav-link">🎮 Mini Games</a>
-    </nav>
-    <div class="container">
-        <h1>Random Password Generator</h1>
-        <p class="subtitle">Generate a set of random numbers for your password needs</p>
-        <div class="form-group">
-            <label for="count">How many numbers?</label>
-            <input type="number" id="count" min="1" max="20" value="6">
-        </div>
-        <div class="form-group">
-            <label for="length">Digits per number:</label>
-            <input type="number" id="length" min="1" max="12" value="6">
-        </div>
-        <button id="generate">Generate</button>
-        <div id="result" class="result"></div>
-        <div class="share-section">
-            <span>Share to:</span>
-            <a class="share-btn" href="#" onclick="shareTo('twitter')">Twitter</a>
-            <a class="share-btn" href="#" onclick="shareTo('facebook')">Facebook</a>
-            <a class="share-btn" href="#" onclick="shareTo('linkedin')">LinkedIn</a>
-            <a class="share-btn" href="#" onclick="shareTo('reddit')">Reddit</a>
-            <a class="share-btn" href="#" onclick="shareTo('whatsapp')">WhatsApp</a>
-            <a class="share-btn" href="#" onclick="shareTo('telegram')">Telegram</a>
-            <a class="share-btn" href="#" onclick="shareTo('pinterest')">Pinterest</a>
-            <a class="share-btn" href="#" onclick="shareTo('tumblr')">Tumblr</a>
-            <a class="share-btn" href="#" onclick="shareTo('email')">Email</a>
-            <a class="share-btn" href="#" onclick="shareTo('wechat')">WeChat</a>
-            <a class="share-btn" href="#" onclick="shareTo('qq')">QQ</a>
-            <a class="share-btn" href="#" onclick="shareTo('weibo')">Weibo</a>
-        </div>
-        <div class="footer-links">
-            <a href="https://www.seodog.cn" target="_blank" rel="noopener">🔗 AI Tools Directory</a>
-        </div>
-    </div>
+    <!-- Header with semantic navigation -->
+    <header>
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <a href="index.html" class="nav-link" aria-current="page">🔢 Simple RNG</a>
+            <a href="randnum.html" class="nav-link">🎲 Advanced RNG</a>
+            <a href="password.html" class="nav-link">🔒 Password Generator</a>
+            <a href="menu.html" class="nav-link">🗺️ Site Map</a>
+            <a href="games.html" class="nav-link">🎮 Mini Games</a>
+        </nav>
+    </header>
+    
+    <!-- Main content -->
+    <main class="container" role="main">
+        <h1>Free Random Number Generator Online</h1>
+        <p class="subtitle">Generate secure random numbers and passwords instantly. Perfect for cryptography, statistics, gaming, and security applications.</p>
+        
+        <!-- Breadcrumb navigation -->
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li aria-current="page">Random Number Generator</li>
+            </ol>
+        </nav>
+        
+        <!-- Main form section -->
+        <section class="generator-section">
+            <h2>Random Number Generator</h2>
+            <p>Generate a set of random numbers for your password needs, cryptography, or statistical analysis.</p>
+            
+            <form class="generator-form" role="form" aria-label="Random number generator form">
+                <div class="form-group">
+                    <label for="count">How many numbers?</label>
+                    <input type="number" id="count" name="count" min="1" max="20" value="6" aria-describedby="count-help">
+                    <small id="count-help">Choose between 1 and 20 numbers</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="length">Digits per number:</label>
+                    <input type="number" id="length" name="length" min="1" max="12" value="6" aria-describedby="length-help">
+                    <small id="length-help">Choose between 1 and 12 digits per number</small>
+                </div>
+                
+                <button type="button" id="generate" aria-label="Generate random numbers">Generate Random Numbers</button>
+            </form>
+            
+            <div id="result" class="result" role="region" aria-live="polite" aria-label="Generated random numbers"></div>
+        </section>
+        
+        <!-- Features section -->
+        <section class="features-section">
+            <h2>Why Choose Our Random Number Generator?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>🔒 Secure & Reliable</h3>
+                    <p>Uses cryptographically secure random number generation algorithms</p>
+                </div>
+                <div class="feature">
+                    <h3>⚡ Instant Results</h3>
+                    <p>Generate random numbers instantly without any delays or registration</p>
+                </div>
+                <div class="feature">
+                    <h3>🎯 Customizable</h3>
+                    <p>Choose the number of digits and quantity to match your specific needs</p>
+                </div>
+                <div class="feature">
+                    <h3>💯 Completely Free</h3>
+                    <p>No hidden costs, no registration required, 100% free to use</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Use cases section -->
+        <section class="use-cases-section">
+            <h2>Common Use Cases</h2>
+            <ul class="use-cases-list">
+                <li><strong>Password Generation:</strong> Create secure passwords for online accounts</li>
+                <li><strong>Cryptography:</strong> Generate encryption keys and random seeds</li>
+                <li><strong>Statistics:</strong> Random sampling for research and analysis</li>
+                <li><strong>Gaming:</strong> Fair random number generation for games</li>
+                <li><strong>Lottery:</strong> Random number selection for lotteries and contests</li>
+                <li><strong>Testing:</strong> Generate test data for software development</li>
+            </ul>
+        </section>
+        
+        <!-- Share section -->
+        <section class="share-section" aria-label="Share this tool">
+            <h3>Share This Tool</h3>
+            <div class="share-buttons">
+                <a class="share-btn" href="#" onclick="shareTo('twitter')" aria-label="Share on Twitter">Twitter</a>
+                <a class="share-btn" href="#" onclick="shareTo('facebook')" aria-label="Share on Facebook">Facebook</a>
+                <a class="share-btn" href="#" onclick="shareTo('linkedin')" aria-label="Share on LinkedIn">LinkedIn</a>
+                <a class="share-btn" href="#" onclick="shareTo('reddit')" aria-label="Share on Reddit">Reddit</a>
+                <a class="share-btn" href="#" onclick="shareTo('whatsapp')" aria-label="Share on WhatsApp">WhatsApp</a>
+                <a class="share-btn" href="#" onclick="shareTo('telegram')" aria-label="Share on Telegram">Telegram</a>
+                <a class="share-btn" href="#" onclick="shareTo('pinterest')" aria-label="Share on Pinterest">Pinterest</a>
+                <a class="share-btn" href="#" onclick="shareTo('tumblr')" aria-label="Share on Tumblr">Tumblr</a>
+                <a class="share-btn" href="#" onclick="shareTo('email')" aria-label="Share via Email">Email</a>
+                <a class="share-btn" href="#" onclick="shareTo('wechat')" aria-label="Share on WeChat">WeChat</a>
+                <a class="share-btn" href="#" onclick="shareTo('qq')" aria-label="Share on QQ">QQ</a>
+                <a class="share-btn" href="#" onclick="shareTo('weibo')" aria-label="Share on Weibo">Weibo</a>
+            </div>
+        </section>
+        
+        <!-- FAQ section -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>How does the random number generator work?</h3>
+                <p>Our random number generator uses cryptographically secure algorithms to generate truly random numbers. The process involves multiple sources of entropy to ensure unpredictability and fairness.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Are the generated numbers truly random?</h3>
+                <p>Yes, our generator uses cryptographically secure random number generation algorithms that produce truly random numbers suitable for security applications.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is this tool free to use?</h3>
+                <p>Absolutely! Our random number generator is completely free to use with no registration required and no hidden costs.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I use these numbers for cryptography?</h3>
+                <p>Yes, our generator produces cryptographically secure random numbers suitable for encryption, key generation, and other security applications.</p>
+            </div>
+        </section>
+        
+        <!-- Footer links -->
+        <footer class="footer-links">
+            <a href="https://www.seodog.cn" target="_blank" rel="noopener noreferrer">🔗 AI Tools Directory</a>
+        </footer>
+    </main>
+    
+    <!-- Scripts -->
     <script src="script.js"></script>
     <script src="share.js"></script>
 </body>

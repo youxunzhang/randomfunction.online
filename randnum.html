@@ -3,52 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Number Generator</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Advanced Random Number Generator Online | Custom Range RNG | RandomFunction.Online</title>
+    <meta name="title" content="Advanced Random Number Generator Online | Custom Range RNG | RandomFunction.Online">
+    <meta name="description" content="Advanced random number generator with custom range, unique numbers, and bulk generation. Perfect for statistics, cryptography, and research. Free online tool.">
+    <meta name="keywords" content="advanced random number generator, custom range random, unique random numbers, bulk random generator, random number algorithm, statistics random, cryptography random">
+    <meta name="author" content="RandomFunction.Online">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://randomfunction.online/randnum.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://randomfunction.online/randnum.html">
+    <meta property="og:title" content="Advanced Random Number Generator Online | RandomFunction.Online">
+    <meta property="og:description" content="Generate random numbers with custom range, unique numbers, and bulk generation. Advanced features for professionals.">
+    <meta property="og:image" content="https://randomfunction.online/og-image.jpg">
+    <meta property="og:site_name" content="RandomFunction.Online">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://randomfunction.online/randnum.html">
+    <meta property="twitter:title" content="Advanced Random Number Generator Online | RandomFunction.Online">
+    <meta property="twitter:description" content="Generate random numbers with custom range, unique numbers, and bulk generation. Advanced features for professionals.">
+    <meta property="twitter:image" content="https://randomfunction.online/twitter-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="randnum.js" as="script">
+    
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Advanced Random Number Generator",
+        "description": "Advanced random number generator with custom range, unique numbers, and bulk generation",
+        "url": "https://randomfunction.online/randnum.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "RandomFunction.Online"
+        },
+        "featureList": [
+            "Custom Range Generation",
+            "Unique Number Generation",
+            "Bulk Number Generation",
+            "Statistics Support",
+            "Cryptography Support"
+        ]
+    }
+    </script>
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://randomfunction.online"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Advanced Random Number Generator",
+                "item": "https://randomfunction.online/randnum.html"
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.html" class="nav-link">🔢 Simple RNG</a>
-        <a href="randnum.html" class="nav-link">🎲 Advanced RNG</a>
-        <a href="password.html" class="nav-link">🔒 Password Generator</a>
-        <a href="menu.html" class="nav-link">🗺️ Site Map</a>
-        <a href="games.html" class="nav-link">🎮 Mini Games</a>
-    </nav>
-    <div class="container">
+    <!-- Header with semantic navigation -->
+    <header>
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <a href="index.html" class="nav-link">🔢 Simple RNG</a>
+            <a href="randnum.html" class="nav-link" aria-current="page">🎲 Advanced RNG</a>
+            <a href="password.html" class="nav-link">🔒 Password Generator</a>
+            <a href="menu.html" class="nav-link">🗺️ Site Map</a>
+            <a href="games.html" class="nav-link">🎮 Mini Games</a>
+        </nav>
+    </header>
+    
+    <!-- Main content -->
+    <main class="container" role="main">
         <h1>Advanced Random Number Generator</h1>
-        <p class="subtitle">Set how many random numbers you want, the min and max value, and get your result instantly!</p>
-        <div class="form-group">
-            <label for="count">How many numbers?</label>
-            <input type="number" id="count" min="1" max="1000" value="10">
-        </div>
-        <div class="form-group">
-            <label for="min">Minimum value:</label>
-            <input type="number" id="min" value="1">
-        </div>
-        <div class="form-group">
-            <label for="max">Maximum value:</label>
-            <input type="number" id="max" value="100">
-        </div>
-        <div class="form-group">
-            <label><input type="checkbox" id="unique" checked> Unique (no repeats)</label>
-        </div>
-        <button id="generate">Generate</button>
-        <button id="copy" style="margin-left:1rem;">Copy Result</button>
-        <div id="result" class="result" style="min-height:3rem;"></div>
-        <div class="subtitle" style="margin-top:2rem;font-size:0.95rem;color:#6b7280;">
-            <b>Note:</b> This random number generator can generate unique or repeatable natural numbers online, suitable for statistics, cryptography, and more.
-        </div>
-        <div class="share-section">
-            <span>Share to:</span>
-            <a class="share-btn" href="#" onclick="shareTo('twitter')">Twitter</a>
-            <a class="share-btn" href="#" onclick="shareTo('facebook')">Facebook</a>
-            <a class="share-btn" href="#" onclick="shareTo('reddit')">Reddit</a>
-            <a class="share-btn" href="#" onclick="shareTo('linkedin')">LinkedIn</a>
-        </div>
-        <div class="footer-links">
-            <a href="https://www.seodog.cn" target="_blank" rel="noopener">🔗 AI Tools Directory</a>
-        </div>
-    </div>
+        <p class="subtitle">Generate random numbers with custom range, unique numbers, and bulk generation. Perfect for statistics, cryptography, and research applications.</p>
+        
+        <!-- Breadcrumb navigation -->
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li aria-current="page">Advanced Random Number Generator</li>
+            </ol>
+        </nav>
+        
+        <!-- Main form section -->
+        <section class="generator-section">
+            <h2>Advanced Random Number Generator</h2>
+            <p>Set how many random numbers you want, the min and max value, and get your result instantly!</p>
+            
+            <form class="generator-form" role="form" aria-label="Advanced random number generator form">
+                <div class="form-group">
+                    <label for="count">How many numbers?</label>
+                    <input type="number" id="count" name="count" min="1" max="1000" value="10" aria-describedby="count-help">
+                    <small id="count-help">Choose between 1 and 1000 numbers</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="min">Minimum value:</label>
+                    <input type="number" id="min" name="min" value="1" aria-describedby="min-help">
+                    <small id="min-help">Enter the minimum value for your range</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="max">Maximum value:</label>
+                    <input type="number" id="max" name="max" value="100" aria-describedby="max-help">
+                    <small id="max-help">Enter the maximum value for your range</small>
+                </div>
+                
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="unique" name="unique" checked aria-describedby="unique-help">
+                        Unique (no repeats)
+                    </label>
+                    <small id="unique-help">Check to ensure no duplicate numbers in the result</small>
+                </div>
+                
+                <div class="button-group">
+                    <button type="button" id="generate" aria-label="Generate random numbers">Generate Random Numbers</button>
+                    <button type="button" id="copy" aria-label="Copy result to clipboard">Copy Result</button>
+                </div>
+            </form>
+            
+            <div id="result" class="result" role="region" aria-live="polite" aria-label="Generated random numbers" style="min-height:3rem;"></div>
+        </section>
+        
+        <!-- Features section -->
+        <section class="features-section">
+            <h2>Advanced Features</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>🎯 Custom Range</h3>
+                    <p>Set your own minimum and maximum values for precise number generation</p>
+                </div>
+                <div class="feature">
+                    <h3>🔢 Bulk Generation</h3>
+                    <p>Generate up to 1000 random numbers at once for large datasets</p>
+                </div>
+                <div class="feature">
+                    <h3>✨ Unique Numbers</h3>
+                    <p>Ensure no duplicate numbers in your results with the unique option</p>
+                </div>
+                <div class="feature">
+                    <h3>📋 Easy Copy</h3>
+                    <p>Copy results to clipboard with one click for easy use</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Use cases section -->
+        <section class="use-cases-section">
+            <h2>Professional Use Cases</h2>
+            <ul class="use-cases-list">
+                <li><strong>Statistical Analysis:</strong> Generate random samples for research and data analysis</li>
+                <li><strong>Cryptography:</strong> Create secure random seeds and encryption keys</li>
+                <li><strong>Simulation:</strong> Random number generation for Monte Carlo simulations</li>
+                <li><strong>Gaming:</strong> Fair random number generation for games and lotteries</li>
+                <li><strong>Testing:</strong> Generate test data for software development and quality assurance</li>
+                <li><strong>Research:</strong> Random sampling for scientific studies and experiments</li>
+            </ul>
+        </section>
+        
+        <!-- Technical note -->
+        <section class="technical-note">
+            <h2>Technical Information</h2>
+            <div class="note-content">
+                <p><strong>Note:</strong> This random number generator can generate unique or repeatable natural numbers online, suitable for statistics, cryptography, and more. The generator uses cryptographically secure algorithms to ensure true randomness.</p>
+            </div>
+        </section>
+        
+        <!-- Share section -->
+        <section class="share-section" aria-label="Share this tool">
+            <h3>Share This Tool</h3>
+            <div class="share-buttons">
+                <a class="share-btn" href="#" onclick="shareTo('twitter')" aria-label="Share on Twitter">Twitter</a>
+                <a class="share-btn" href="#" onclick="shareTo('facebook')" aria-label="Share on Facebook">Facebook</a>
+                <a class="share-btn" href="#" onclick="shareTo('reddit')" aria-label="Share on Reddit">Reddit</a>
+                <a class="share-btn" href="#" onclick="shareTo('linkedin')" aria-label="Share on LinkedIn">LinkedIn</a>
+            </div>
+        </section>
+        
+        <!-- Footer links -->
+        <footer class="footer-links">
+            <a href="https://www.seodog.cn" target="_blank" rel="noopener noreferrer">🔗 AI Tools Directory</a>
+        </footer>
+    </main>
+    
+    <!-- Scripts -->
     <script src="randnum.js"></script>
     <script src="share.js"></script>
 </body>
