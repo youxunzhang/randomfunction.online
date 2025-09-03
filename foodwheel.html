@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    
+    <!-- Primary Meta Tags -->
+    <title>美食大转盘 - 随机美食推荐与营养分析 | RandomFunction.Online</title>
+    <meta name="title" content="美食大转盘 - 随机美食推荐与营养分析 | RandomFunction.Online">
+    <meta name="description" content="转动转盘获得随机美食推荐，了解详细营养成分和健康建议。包含中西方美食，帮助您发现新美食并做出健康选择。">
+    <meta name="keywords" content="美食大转盘, 随机美食推荐, 营养分析, 健康饮食, 食物营养成分, 美食推荐工具">
+    <meta name="author" content="RandomFunction.Online">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Chinese">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://randomfunction.online/foodwheel.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://randomfunction.online/foodwheel.html">
+    <meta property="og:title" content="美食大转盘 - 随机美食推荐与营养分析 | RandomFunction.Online">
+    <meta property="og:description" content="转动转盘获得随机美食推荐，了解详细营养成分和健康建议。">
+    <meta property="og:image" content="https://randomfunction.online/og-image.jpg">
+    <meta property="og:site_name" content="RandomFunction.Online">
+    <meta property="og:locale" content="zh_CN">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://randomfunction.online/foodwheel.html">
+    <meta property="twitter:title" content="美食大转盘 - 随机美食推荐与营养分析 | RandomFunction.Online">
+    <meta property="twitter:description" content="转动转盘获得随机美食推荐，了解详细营养成分和健康建议。">
+    <meta property="twitter:image" content="https://randomfunction.online/twitter-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="foodwheel.js" as="script">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8794607118520437" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-8794607118520437">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSXS98F93E"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-GSXS98F93E');
+    </script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "美食大转盘",
+        "description": "随机美食推荐与营养分析工具",
+        "url": "https://randomfunction.online/foodwheel.html",
+        "applicationCategory": "FoodApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "RandomFunction.Online"
+        },
+        "featureList": [
+            "随机美食推荐",
+            "详细营养分析",
+            "健康饮食建议",
+            "全球美食数据库",
+            "营养成分计算"
+        ]
+    }
+    </script>
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://randomfunction.online"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "美食大转盘",
+                "item": "https://randomfunction.online/foodwheel.html"
+            }
+        ]
+    }
+    </script>
+    
+    <style>
+        .foodwheel-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .wheel-section {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .wheel-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        
+        .wheel {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            transition: transform 3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .wheel-spinning {
+            animation: spin 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(var(--final-rotation)); }
+        }
+        
+        .wheel-pointer {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 40px solid #ef4444;
+            z-index: 10;
+        }
+        
+        .spin-btn {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .spin-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+        }
+        
+        .spin-btn:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .result-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            display: none;
+        }
+        
+        .food-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .food-card {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #10b981;
+        }
+        
+        .nutrition-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .nutrition-item {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .nutrition-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #10b981;
+        }
+        
+        .nutrition-label {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-top: 0.5rem;
+        }
+        
+        .health-tips {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .food-categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .category-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid #e5e7eb;
+            background: #fff;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .category-btn.active {
+            border-color: #10b981;
+            background: #10b981;
+            color: #fff;
+        }
+        
+        @media (max-width: 768px) {
+            .wheel-container {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .foodwheel-container {
+                padding: 10px;
+            }
+            
+            .wheel-section, .result-section {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with semantic navigation -->
+    <header>
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <a href="index.html" class="nav-link">🔢 Simple RNG</a>
+            <a href="randnum.html" class="nav-link">🎲 Advanced RNG</a>
+            <a href="password.html" class="nav-link">🔒 Password Generator</a>
+            <a href="menu.html" class="nav-link">🗺️ Site Map</a>
+            <a href="games.html" class="nav-link">🎮 Mini Games</a>
+            <a href="foodwheel.html" class="nav-link" aria-current="page">🍽️ 美食大转盘</a>
+        </nav>
+    </header>
+    
+    <!-- Main content -->
+    <main class="foodwheel-container" role="main">
+        <h1>🍽️ 美食大转盘</h1>
+        <p class="subtitle">转动转盘获得随机美食推荐，了解详细营养成分和健康建议。让美食选择变得有趣而健康！</p>
+        
+        <!-- Breadcrumb navigation -->
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li aria-current="page">美食大转盘</li>
+            </ol>
+        </nav>
+        
+        <!-- Food categories -->
+        <section class="foodwheel-section">
+            <h2>选择美食类别</h2>
+            <div class="food-categories">
+                <button class="category-btn active" data-category="all">🌍 全部美食</button>
+                <button class="category-btn" data-category="chinese">🥢 中餐</button>
+                <button class="category-btn" data-category="western">🍕 西餐</button>
+                <button class="category-btn" data-category="japanese">🍣 日料</button>
+                <button class="category-btn" data-category="korean">🍜 韩料</button>
+                <button class="category-btn" data-category="dessert">🍰 甜点</button>
+                <button class="category-btn" data-category="drinks">🥤 饮品</button>
+            </div>
+        </section>
+        
+        <!-- Wheel section -->
+        <section class="wheel-section">
+            <h2>🎡 美食大转盘</h2>
+            <p>点击下方按钮开始转动转盘，获得随机美食推荐！</p>
+            
+            <div class="wheel-container">
+                <div class="wheel-pointer"></div>
+                <canvas id="foodwheel" width="400" height="400"></canvas>
+            </div>
+            
+            <button id="spin-btn" class="spin-btn">🎯 开始转动</button>
+            <p><small>每次转动都会获得不同的美食推荐和营养信息</small></p>
+        </section>
+        
+        <!-- Result section -->
+        <section id="result-section" class="result-section">
+            <h2>🎉 推荐美食</h2>
+            <div id="food-result"></div>
+        </section>
+        
+        <!-- Features section -->
+        <section class="features-section">
+            <h2>🌟 功能特色</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>🎡 随机推荐</h3>
+                    <p>转动转盘获得随机美食建议，让选择变得有趣</p>
+                </div>
+                <div class="feature">
+                    <h3>🍎 营养分析</h3>
+                    <p>详细的食物营养成分信息，包括卡路里、蛋白质等</p>
+                </div>
+                <div class="feature">
+                    <h3>🌍 全球美食</h3>
+                    <p>包含中西方各类美食，满足不同口味需求</p>
+                </div>
+                <div class="feature">
+                    <h3>💡 健康建议</h3>
+                    <p>基于营养的饮食建议，帮助做出健康选择</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Use cases section -->
+        <section class="use-cases-section">
+            <h2>🎯 使用场景</h2>
+            <ul class="use-cases-list">
+                <li><strong>🍽️ 日常饮食：</strong>不知道吃什么时，让转盘帮您选择</li>
+                <li><strong>📚 营养学习：</strong>了解不同食物的营养成分和健康价值</li>
+                <li><strong>🎉 聚会娱乐：</strong>朋友聚会时用转盘决定聚餐选择</li>
+                <li><strong>🏃 健康管理：</strong>根据营养需求选择合适的食物</li>
+                <li><strong>🌍 文化探索：</strong>发现不同国家和地区的美食文化</li>
+                <li><strong>👶 儿童教育：</strong>帮助孩子了解食物和营养知识</li>
+            </ul>
+        </section>
+        
+        <!-- Share section -->
+        <section class="share-section" aria-label="Share this tool">
+            <h3>Share This Tool</h3>
+            <div class="share-buttons">
+                <a class="share-btn" href="#" onclick="shareTo('twitter')" aria-label="Share on Twitter">Twitter</a>
+                <a class="share-btn" href="#" onclick="shareTo('facebook')" aria-label="Share on Facebook">Facebook</a>
+                <a class="share-btn" href="#" onclick="shareTo('reddit')" aria-label="Share on Reddit">Reddit</a>
+                <a class="share-btn" href="#" onclick="shareTo('linkedin')" aria-label="Share on LinkedIn">LinkedIn</a>
+            </div>
+        </section>
+        
+        <!-- Footer links -->
+        <footer class="footer-links">
+            <a href="https://www.seodog.cn" target="_blank" rel="noopener noreferrer">🔗 AI Tools Directory</a>
+        </footer>
+    </main>
+    
+    <!-- Scripts -->
+    <script src="foodwheel.js"></script>
+    <script src="bookmark-share.js"></script>
+    <script src="share.js"></script>
+</body>
+</html>
