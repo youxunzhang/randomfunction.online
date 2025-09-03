@@ -473,6 +473,44 @@ input:focus,
     }
 }
 
+/* Performance optimizations */
+* {
+    box-sizing: border-box;
+}
+
+/* Critical rendering path optimizations */
+.container {
+    contain: layout style paint;
+}
+
+/* Reduce layout shifts */
+img, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Optimize animations for performance */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Print styles for better accessibility */
+@media print {
+    .navbar, .share-section, .footer-links {
+        display: none;
+    }
+    
+    .container {
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+}
+
 /* Additional styles for menu page and enhanced elements */
 .tools-section {
     margin: 3rem 0;

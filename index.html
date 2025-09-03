@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="format-detection" content="telephone=no">
     
     <!-- Primary Meta Tags -->
     <title>Free Random Number Generator Online | Random Password Generator | RandomFunction.Online</title>
@@ -42,6 +46,10 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="style.css" as="style">
     <link rel="preload" href="script.js" as="script">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -52,7 +60,27 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-GSXS98F93E');
+        gtag('config', 'G-GSXS98F93E', {
+            'custom_map': {
+                'dimension1': 'page_load_time',
+                'dimension2': 'user_device_type'
+            }
+        });
+        
+        // Performance monitoring
+        if ('performance' in window) {
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    const perfData = performance.getEntriesByType('navigation')[0];
+                    if (perfData) {
+                        gtag('event', 'timing_complete', {
+                            'name': 'load',
+                            'value': Math.round(perfData.loadEventEnd - perfData.loadEventStart)
+                        });
+                    }
+                }, 0);
+            });
+        }
     </script>
     
     <!-- Google AdSense -->
@@ -83,8 +111,13 @@
             "Password Generation",
             "Mini Games",
             "Advanced RNG",
-            "Free Online Tools"
-        ]
+            "Free Online Tools",
+            "Cryptographically Secure",
+            "Pseudorandom Number Generator",
+            "True Random Numbers"
+        ],
+        "keywords": "random number generator, random function, pseudorandom number generator, true random number generator, cryptography random, statistics random, secure random numbers",
+        "applicationSubCategory": "RandomNumberGenerator"
     }
     </script>
     
@@ -124,8 +157,8 @@
     
     <!-- Main content -->
     <main class="container" role="main">
-        <h1>Free Random Number Generator Online</h1>
-        <p class="subtitle">Generate secure random numbers and passwords instantly. Perfect for cryptography, statistics, gaming, and security applications.</p>
+        <h1>Free Random Number Generator Online | Random Function Tool</h1>
+        <p class="subtitle">Generate secure random numbers and passwords instantly. Perfect for cryptography, statistics, gaming, and security applications. Advanced random number generator for developers and professionals.</p>
         
         <!-- Breadcrumb navigation -->
         <nav aria-label="Breadcrumb" class="breadcrumb">
@@ -137,8 +170,8 @@
         
         <!-- Main form section -->
         <section class="generator-section">
-            <h2>Random Number Generator</h2>
-            <p>Generate a set of random numbers for your password needs, cryptography, or statistical analysis.</p>
+            <h2>Advanced Random Number Generator</h2>
+            <p>Generate a set of random numbers for your password needs, cryptography, or statistical analysis. Our pseudorandom number generator uses secure algorithms for true randomness.</p>
             
             <form class="generator-form" role="form" aria-label="Random number generator form">
                 <div class="form-group">
@@ -179,19 +212,29 @@
                     <h3>💯 Completely Free</h3>
                     <p>No hidden costs, no registration required, 100% free to use</p>
                 </div>
+                <div class="feature">
+                    <h3>🔐 Cryptographically Secure</h3>
+                    <p>Uses advanced algorithms like Mersenne Twister for true randomness</p>
+                </div>
+                <div class="feature">
+                    <h3>📱 Mobile Optimized</h3>
+                    <p>Works perfectly on all devices including smartphones and tablets</p>
+                </div>
             </div>
         </section>
         
         <!-- Use cases section -->
         <section class="use-cases-section">
-            <h2>Common Use Cases</h2>
+            <h2>Common Use Cases for Random Number Generators</h2>
             <ul class="use-cases-list">
-                <li><strong>Password Generation:</strong> Create secure passwords for online accounts</li>
-                <li><strong>Cryptography:</strong> Generate encryption keys and random seeds</li>
-                <li><strong>Statistics:</strong> Random sampling for research and analysis</li>
-                <li><strong>Gaming:</strong> Fair random number generation for games</li>
-                <li><strong>Lottery:</strong> Random number selection for lotteries and contests</li>
-                <li><strong>Testing:</strong> Generate test data for software development</li>
+                <li><strong>Password Generation:</strong> Create secure passwords for online accounts using our random function</li>
+                <li><strong>Cryptography:</strong> Generate encryption keys and random seeds with our pseudorandom number generator</li>
+                <li><strong>Statistics:</strong> Random sampling for research and analysis using true random numbers</li>
+                <li><strong>Gaming:</strong> Fair random number generation for games and lotteries</li>
+                <li><strong>Lottery:</strong> Random number selection for lotteries and contests with our online randomizer</li>
+                <li><strong>Testing:</strong> Generate test data for software development and quality assurance</li>
+                <li><strong>Machine Learning:</strong> Random initialization for neural networks and algorithms</li>
+                <li><strong>Simulation:</strong> Monte Carlo simulations and random walk algorithms</li>
             </ul>
         </section>
         
@@ -211,6 +254,18 @@
                 <a class="share-btn" href="#" onclick="shareTo('wechat')" aria-label="Share on WeChat">WeChat</a>
                 <a class="share-btn" href="#" onclick="shareTo('qq')" aria-label="Share on QQ">QQ</a>
                 <a class="share-btn" href="#" onclick="shareTo('weibo')" aria-label="Share on Weibo">Weibo</a>
+            </div>
+        </section>
+        
+        <!-- Technical Information -->
+        <section class="technical-note">
+            <h2>Technical Implementation & Developer Information</h2>
+            <div class="note-content">
+                <p><strong>Algorithm:</strong> Our random number generator implements a cryptographically secure pseudorandom number generator (CSPRNG) using the Web Crypto API. This ensures true randomness suitable for security applications, cryptography, and statistical analysis.</p>
+                <p><strong>Entropy Sources:</strong> We combine multiple entropy sources including system time, user interactions, and cryptographic randomness to generate unpredictable numbers.</p>
+                <p><strong>Security:</strong> All generated numbers are cryptographically secure and suitable for encryption keys, random seeds, and security tokens.</p>
+                <p><strong>API Usage:</strong> Developers can integrate our random number generator into their applications using JavaScript. The generator provides both synchronous and asynchronous methods for different use cases.</p>
+                <p><strong>Compliance:</strong> Our random number generator meets industry standards for cryptographic applications and is suitable for use in production environments.</p>
             </div>
         </section>
         

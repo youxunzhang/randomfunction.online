@@ -17,6 +17,8 @@ Allow: /randnum.html
 Allow: /password.html
 Allow: /games.html
 Allow: /menu.html
+Allow: /404.html
+Allow: /500.html
 
 # Allow CSS and JS files
 Allow: /*.css

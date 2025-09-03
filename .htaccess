@@ -100,4 +100,46 @@ RewriteRule \.(jpg|jpeg|png|gif|css|js)$ - [F]
     RewriteCond %{QUERY_STRING} ^$
     RewriteCond %{REQUEST_URI} \.(css|js|png|jpg|jpeg|gif|ico|svg)$ [NC]
     RewriteRule ^(.+)\.(\d+)\.(css|js|png|jpg|jpeg|gif|ico|svg)$ $1.$3 [L]
+    
+    # Force HTTPS for better security and performance
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Additional performance optimizations
+<IfModule mod_headers.c>
+    # Enable compression for all text-based files
+    <FilesMatch "\.(html|css|js|xml|txt)$">
+        Header set Vary: Accept-Encoding
+    </FilesMatch>
+    
+    # Security headers for better protection
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Performance headers
+    Header set X-Download-Options noopen
+    Header set X-Permitted-Cross-Domain-Policies none
+</IfModule>
+
+# Optimize for Core Web Vitals
+<IfModule mod_expires.c>
+    ExpiresActive on
+    
+    # Cache static assets for longer periods
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    
+    # Cache HTML for shorter periods
+    ExpiresByType text/html "access plus 1 hour"
 </IfModule>
